@@ -43,6 +43,8 @@ public:
     Led *led;
     QLCDNumber *lcdNumber_2;
     QTextEdit *textEdit_2;
+    QTextEdit *textEdit_3;
+    QLCDNumber *lcdNumber_3;
 
     void setupUi(QWidget *GUIPanel)
     {
@@ -98,6 +100,12 @@ public:
         textEdit_2 = new QTextEdit(tab_2);
         textEdit_2->setObjectName("textEdit_2");
         textEdit_2->setGeometry(QRect(170, 250, 104, 21));
+        textEdit_3 = new QTextEdit(tab_2);
+        textEdit_3->setObjectName("textEdit_3");
+        textEdit_3->setGeometry(QRect(310, 250, 104, 66));
+        lcdNumber_3 = new QLCDNumber(tab_2);
+        lcdNumber_3->setObjectName("lcdNumber_3");
+        lcdNumber_3->setGeometry(QRect(310, 220, 64, 23));
         tabWidget->addTab(tab_2, QString());
         QWidget::setTabOrder(serialPortComboBox, pingButton);
         QWidget::setTabOrder(pingButton, runButton);
@@ -143,6 +151,15 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">id</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        textEdit_3->setHtml(QCoreApplication::translate("GUIPanel", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ID 1 o 2</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("GUIPanel", "Tab 2", nullptr));
     } // retranslateUi

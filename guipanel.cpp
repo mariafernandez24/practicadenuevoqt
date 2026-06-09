@@ -135,6 +135,12 @@ void GUIPanel::readRequest()
                             ui->lcdNumber->display((int)param.total_productos);
                             ui->led->setChecked(!ui->led->isChecked());
                             ui->lcdNumber_2->display((int)param.id);
+
+                            if(param.ID_PROD==1){
+                                 ui->lcdNumber_3->display((int)param.ID_PROD);
+                            }else if(param.ID_PROD==2){
+                                 ui->lcdNumber_3->display((int)param.ID_PROD);
+                            }
                         }
                     }
                     break;

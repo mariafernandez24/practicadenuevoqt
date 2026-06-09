@@ -33,7 +33,7 @@ typedef struct
 {
     uint32_t total_productos;
     uint32_t id;
-
+    uint32_t ID_PROD;
 } PARAM_MENSAJE_PRODUCTO;
 
 #pragma pack() //...Pero solo para los mensajes que voy a intercambiar, no para el resto
