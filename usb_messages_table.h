@@ -32,6 +32,7 @@ typedef struct
 typedef struct
 {
     uint32_t total_productos;
+    uint32_t id;
 
 } PARAM_MENSAJE_PRODUCTO;
 

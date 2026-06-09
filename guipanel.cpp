@@ -134,7 +134,7 @@ void GUIPanel::readRequest()
                             // Muestra en una etiqueta (statuslabel) del GUI el mensaje
                             ui->lcdNumber->display((int)param.total_productos);
                             ui->led->setChecked(!ui->led->isChecked());
-
+                            ui->lcdNumber_2->display((int)param.id);
                         }
                     }
                     break;
