@@ -236,7 +236,6 @@ void GUIPanel::startSlave()
         }
     }
 
-    ui->runButton->setEnabled(false);
 
     // Se indica que se ha realizado la conexión en la etiqueta 'statusLabel'
     ui->statusLabel->setText(tr("Estado: Ejecucion, conectado al puerto %1.")
@@ -244,6 +243,7 @@ void GUIPanel::startSlave()
 
     // Y se habilitan los controles
     ui->pingButton->setEnabled(true);
+    ui->pushButton->setEnabled(true);   // botón Inicio
 
     // Variable indicadora de conexión a TRUE, para que se permita enviar mensajes en respuesta
     // a eventos del interfaz gráfico
@@ -314,4 +314,30 @@ void GUIPanel::pingResponseReceived()
     ventanaPopUp.setStyleSheet("background-color: lightgrey");
     ventanaPopUp.setModal(true);
     ventanaPopUp.show();
+}
+
+
+void GUIPanel::on_pushButton_clicked()
+{
+    uint8_t paquete[MAX_FRAME_SIZE];
+    int size;
+
+    if (fConnected)
+    {
+        size = create_frame(paquete,
+                            MENSAJE_INICIO,
+                            nullptr,
+                            0,
+                            MAX_FRAME_SIZE);
+
+        if (size > 0)
+        {
+            serial.write((const char *)paquete, size);
+            ui->pushButton->setEnabled(false);
+        }
+        else
+        {
+            ui->statusLabel->setText("Error creando mensaje");
+        }
+    }
 }

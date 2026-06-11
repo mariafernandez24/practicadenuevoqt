@@ -230,6 +230,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>340</y>
+       <width>56</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>INICIO</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

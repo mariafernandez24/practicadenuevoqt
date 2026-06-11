@@ -25,6 +25,8 @@ private slots:
     void on_runButton_clicked();
     void on_statusButton_clicked();
 
+    void on_pushButton_clicked();
+
 private: // funciones privadas
     void pingDevice();
     void startSlave();

@@ -14,6 +14,7 @@ typedef enum
     MENSAJE_NO_IMPLEMENTADO,
     MENSAJE_PING,
     MENSAJE_PRODUCTO,
+    MENSAJE_INICIO,
     // etc, etc...
 } messageTypes;
 
@@ -35,7 +36,12 @@ typedef struct
     uint32_t id;
     uint32_t ID_PROD;
 } PARAM_MENSAJE_PRODUCTO;
-
+typedef struct
+{
+    uint32_t IDProd;
+    uint32_t periodo_ms;
+    uint32_t ledPin;
+} PARAM_TAREA;
 #pragma pack() //...Pero solo para los mensajes que voy a intercambiar, no para el resto
 
 #endif
